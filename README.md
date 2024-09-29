@@ -1,5 +1,5 @@
 # Project Title
-
+Project Marketplace Management System
 ## Overview
 
 This project is a C# application that connects to a SQL database. Below are the steps to set up the database, configure the connection, and run the application.
