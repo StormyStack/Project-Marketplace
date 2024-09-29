@@ -169,10 +169,10 @@
             // SellerDGV
             // 
             SellerDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            SellerDGV.Location = new Point(50, 203);
+            SellerDGV.Location = new Point(12, 203);
             SellerDGV.Name = "SellerDGV";
             SellerDGV.RowHeadersWidth = 51;
-            SellerDGV.Size = new Size(539, 225);
+            SellerDGV.Size = new Size(634, 225);
             SellerDGV.TabIndex = 38;
             SellerDGV.CellClick += SellerDGV_CellContentClick;
             SellerDGV.CellContentClick += SellerDGV_CellContentClick;
@@ -182,7 +182,7 @@
             Back.BackColor = Color.Khaki;
             Back.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Back.ForeColor = Color.Black;
-            Back.Location = new Point(652, 330);
+            Back.Location = new Point(694, 330);
             Back.Margin = new Padding(3, 4, 3, 4);
             Back.Name = "Back";
             Back.Size = new Size(95, 40);
@@ -196,7 +196,7 @@
             Homebtn.BackColor = Color.Khaki;
             Homebtn.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Homebtn.ForeColor = Color.Black;
-            Homebtn.Location = new Point(652, 378);
+            Homebtn.Location = new Point(694, 388);
             Homebtn.Margin = new Padding(3, 4, 3, 4);
             Homebtn.Name = "Homebtn";
             Homebtn.Size = new Size(95, 40);

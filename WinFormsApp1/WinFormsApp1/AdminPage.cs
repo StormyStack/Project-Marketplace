@@ -14,6 +14,7 @@ namespace WinFormsApp1
 {
     public partial class AdminPage : Form
     {
+        private int Sid = -1;
         public AdminPage()
         {
             InitializeComponent();
@@ -110,12 +111,59 @@ namespace WinFormsApp1
 
         private void SellerInfoDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && SellerInfoDGV.Rows[e.RowIndex].Cells["sid"].Value != null)
+            {
+                SellerInfoDGV.Rows[e.RowIndex].Selected = true;
 
+                Sid = Convert.ToInt32(SellerInfoDGV.Rows[e.RowIndex].Cells["sid"].Value);
+                string SellerName = SellerInfoDGV.Rows[e.RowIndex].Cells["susername"].Value.ToString();
+                MessageBox.Show($"Selected Seller: {SellerName} (ID: {Sid})", "Project Selected");
+            }
         }
 
         private void ProjectDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Sid == -1)
+            {
+                MessageBox.Show("Please select a seller to delete.", "No Seller Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SqlConnection Con = new SqlConnection(@"Data Source=SUDIPTO;Initial Catalog=ProjectMarketplace;Integrated Security=True"))
+            {
+                try
+                {
+                    Con.Open();
+                    string query = "DELETE FROM Seller WHERE Sid = @sid";
+
+                    using (SqlCommand cmd = new SqlCommand(query, Con))
+                    {
+                        cmd.Parameters.AddWithValue("@sid", Sid);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Seller deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData1();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete the seller.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }

@@ -38,6 +38,7 @@
             label2 = new Label();
             BackbksBtn = new Button();
             HomeBtn = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)BuyerInfoDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SellerInfoDGV).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ProjectDGV).BeginInit();
@@ -151,6 +152,18 @@
             HomeBtn.UseVisualStyleBackColor = false;
             HomeBtn.Click += HomeBtn_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Red;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(54, 376);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 47);
+            button1.TabIndex = 53;
+            button1.Text = "Delete";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // AdminPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -158,6 +171,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1223, 632);
+            Controls.Add(button1);
             Controls.Add(HomeBtn);
             Controls.Add(BackbksBtn);
             Controls.Add(label2);
@@ -188,5 +202,6 @@
         private Label label2;
         private Button BackbksBtn;
         private Button HomeBtn;
+        private Button button1;
     }
 }

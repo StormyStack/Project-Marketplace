@@ -41,10 +41,10 @@
             // BuyerDGV
             // 
             BuyerDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            BuyerDGV.Location = new Point(26, 142);
+            BuyerDGV.Location = new Point(12, 142);
             BuyerDGV.Name = "BuyerDGV";
             BuyerDGV.RowHeadersWidth = 51;
-            BuyerDGV.Size = new Size(521, 210);
+            BuyerDGV.Size = new Size(772, 210);
             BuyerDGV.TabIndex = 51;
             BuyerDGV.CellContentClick += BuyerDGV_CellContentClick;
             // 
