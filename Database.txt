@@ -1,0 +1,60 @@
+We cannot export our Databse from sql management system 2014. Some error showing. For that Here is our SQL database commands.
+-------------------------------------------------------
+Database : ProjectMarketplace
+-------------------------------------------------------
+CREATE TABLE [dbo].[admin] (
+    [aid]          INT           IDENTITY (1, 1) NOT NULL,
+    [aemail]       VARCHAR (MAX) NULL,
+    [ausername]    VARCHAR (MAX) NULL,
+    [apassword]    VARCHAR (MAX) NULL,
+    [date_created] DATE          NULL,
+    PRIMARY KEY CLUSTERED ([aid] ASC)
+);
+-----------------------------------------------------
+CREATE TABLE [dbo].[seller] (
+    [sid]          INT           IDENTITY (1, 1) NOT NULL,
+    [semail]       VARCHAR (MAX) NULL,
+    [susername]    VARCHAR (MAX) NULL,
+    [spassword]    VARCHAR (MAX) NULL,
+    [date_created] DATE          NULL,
+    PRIMARY KEY CLUSTERED ([sid] ASC)
+);
+---------------------------------------------------
+CREATE TABLE [dbo].[buyer] (
+    [bid]          INT           IDENTITY (1, 1) NOT NULL,
+    [bemail]       VARCHAR (MAX) NULL,
+    [busername]    VARCHAR (MAX) NULL,
+    [bpassword]    VARCHAR (MAX) NULL,
+    [date_created] DATE          NULL,
+    PRIMARY KEY CLUSTERED ([bid] ASC)
+);
+----------------------------------------------------
+CREATE TABLE [dbo].[SellerTbl] (
+    [ProjectId]    INT          IDENTITY (1, 1) NOT NULL,
+    [ProjectName]  VARCHAR (50) NOT NULL,
+    [Category]   VARCHAR (50) NOT NULL,
+    [Price] VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ProjectId] ASC)
+);
+----------------------------------------------------
+CREATE TABLE [dbo].[BkashTbl] (
+    [BkashId]          INT           IDENTITY (1, 1) NOT NULL,
+    [BkashNum]       VARCHAR (MAX) NULL,
+    [BkashPass]    VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([BkashId] ASC)
+);
+-----------------------------------------------------
+CREATE TABLE [dbo].[NagadId] (
+    [NagadId]          INT           IDENTITY (1, 1) NOT NULL,
+    [NagadNum]       VARCHAR (MAX) NULL,
+    [NagadPass]    VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([NagadId] ASC)
+);
+----------------------------------------------------
+CREATE VIEW [dbo].[BuyerView] AS
+SELECT [sid]
+      ,[ProjectId]
+      ,[ProjectName]
+      ,[Category]
+      ,[Price]
+FROM [ProjectMarketplace].[dbo].[BuyerView];
